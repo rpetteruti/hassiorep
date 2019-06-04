@@ -1,6 +1,6 @@
 {
   "name": "Vodafone-Wifi Autologin",
-  "version": "1.7",
+  "version": "1.8",
   "slug": "vodafonewifi_autologin",
   "description": "This addon do autologin using vodafone credentials",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
