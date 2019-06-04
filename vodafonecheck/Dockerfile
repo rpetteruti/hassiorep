@@ -1,4 +1,4 @@
-FROM python:2
+FROM python:2.alpine
 
 ENV LANG C.UTF-8
 
@@ -17,8 +17,9 @@ COPY . .
 
 RUN chmod +x /usr/src/app/run.sh
 
-RUN curl -o /usr/local/bin/jq http://stedolan.github.io/jq/download/linux64/jq && \
-  chmod +x /usr/local/bin/jq
+RUN apk update \
+ && apk add jq \
+ && rm -rf /var/cache/apk/*
 
 CMD [ "/usr/src/app/run.sh"]
 
