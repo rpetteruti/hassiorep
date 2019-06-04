@@ -17,5 +17,7 @@ COPY . .
 
 RUN chmod +x /usr/src/app/run.sh
 
+RUN apt-get install jq
+
 CMD [ "/usr/src/app/run.sh"]
 
