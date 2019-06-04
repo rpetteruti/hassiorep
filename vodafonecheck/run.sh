@@ -8,8 +8,10 @@ PASSWORD=$(jq --raw-output ".password" $CONFIG_PATH)
 
 echo "Parameters: $USERNAME $PASSWORD"
 
+echo "nameserver 192.168.21.254" > /etc/resolv.conf
+
 while true; do 
-  if ping -c 5 8.8.8.8 &> /dev/null
+  if ping -c 2 8.8.8.8 &> /dev/null
   then
     echo "Internet Ok"
   else
