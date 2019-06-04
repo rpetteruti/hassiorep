@@ -5,7 +5,7 @@ ENV LANG C.UTF-8
 # Copy data for add-on
 #COPY run.sh /
 #RUN chmod a+x /run.sh
-
+RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
 #COPY default.conf /etc/nginx/conf.d/
