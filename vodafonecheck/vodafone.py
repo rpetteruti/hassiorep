@@ -70,8 +70,8 @@ def getConfig():
 		c.read(join(ROOT_DIR,'vodafone.conf'))
 		#dict['username'] = c.get('config', 'username')
 		#dict['password'] = c.get('config', 'password')
-		dict['username'] = os.environ['username']
-		dict['password'] = os.environ['password']
+		dict['username'] = sys.argv[1]
+		dict['password'] = sys.argv[2]
 		dict['customer'] = c.get('config', 'customer')
 		dict['loop'] = c.get('config', 'loop')
 		dict['force'] = c.get('config', 'force')
@@ -157,7 +157,7 @@ def loop_connect(LOOP, FORCE, USERNAME, PASSWORD, CUSTOMER, SUCCESS_URL):
 
 def main():
 	#Logging item
-	logging.basicConfig(stream=sys.stdout,format='%(asctime)s %(levelname)s %(message)s',level=logging.INFO)
+	logging.basicConfig(stream=sys.stdout,format='%(asctime)s %(levelname)s %(message)s',level=logging.DEBUG)
 
     	#Logging header
     	logging.info('#################################################################')
