@@ -19,6 +19,7 @@ RUN chmod +x /usr/src/app/run.sh
 
 RUN apk update \
  && apk add jq \
+ && apk add bash \
  && rm -rf /var/cache/apk/*
 
 CMD [ "/usr/src/app/run.sh"]
