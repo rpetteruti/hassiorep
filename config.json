@@ -1,0 +1,14 @@
+{
+  "name": "Nging HA proxy",
+  "version": "1",
+  "slug": "nginx_proxy",
+  "description": "This addon expose Hass on http",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "before",
+  "boot": "auto",
+  "options": {},
+  "schema": {},
+  "ports": {
+    "82/tcp": 82
+  }
+}
