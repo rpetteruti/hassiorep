@@ -15,5 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+RUN chmod +x /usr/src/app/run.sh
+
 CMD [ "/usr/src/app/run.sh"]
 
