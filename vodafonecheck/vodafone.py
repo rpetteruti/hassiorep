@@ -70,8 +70,8 @@ def getConfig():
 		c.read(join(ROOT_DIR,'vodafone.conf'))
 		#dict['username'] = c.get('config', 'username')
 		#dict['password'] = c.get('config', 'password')
-		dict['username'] = os.environ['USERNAME']
-		dict['password'] = os.environ['PASSWORD']
+		dict['username'] = os.environ['username']
+		dict['password'] = os.environ['password']
 		dict['customer'] = c.get('config', 'customer')
 		dict['loop'] = c.get('config', 'loop')
 		dict['force'] = c.get('config', 'force')
