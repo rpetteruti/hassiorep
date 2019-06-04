@@ -14,7 +14,12 @@ while true; do
     echo "Internet Ok"
   else
     echo "Internet KO, starting vodafone autologin"
-    python vodafone.py
+    #python vodafone.py
+    URL=$(curl -Ls -w %{url_effective} http://google.com)
+    URL=${URL:0:47}login${URL:53:165}
+    echo "$URL"
+    DATA=chooseCountry=VF_IT%2F&userFake=${USERNAME}&UserName=VF_IT%2F${USERNAME}&Password=${PASSWORD}&rememberMe=true&_rememberMe=on
+    curl --data "${DATA}" ${URL}
   fi
   sleep 30
 done
