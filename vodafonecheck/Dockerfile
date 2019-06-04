@@ -1,4 +1,4 @@
-FROM python:2.alpine
+FROM python:2-alpine
 
 ENV LANG C.UTF-8
 
