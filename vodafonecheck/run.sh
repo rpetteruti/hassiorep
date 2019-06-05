@@ -16,7 +16,7 @@ while true; do
     echo "Internet Ok"
   else
     echo "Internet KO, starting vodafone autologin"
-    python vodafone.py $USERNAME $PASSWORD
+    python vodafone.py $USERNAME $PASSWORD || true
   fi
   sleep 30
 done
