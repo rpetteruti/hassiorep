@@ -13,7 +13,7 @@ echo "nameserver 192.168.21.254" > /etc/resolv.conf
 while true; do 
   if ping -c 2 8.8.8.8 &> /dev/null
   then
-    echo "Internet Ok"
+    echo "$(date) Internet OK"
   else
     echo "Internet KO, starting vodafone autologin"
     python vodafone.py $USERNAME $PASSWORD || true
