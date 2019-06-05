@@ -8,10 +8,12 @@
   "boot": "auto",
   "options": {
     "username": null,
-    "password": ""
+    "password": "",
+    "dns": "192.168.21.254"
   },
   "schema": {
     "username": "str",
-    "password": "str"
+    "password": "str",
+    "dns": "str"
 }
 }
