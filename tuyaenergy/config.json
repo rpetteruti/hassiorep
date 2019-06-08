@@ -8,6 +8,7 @@
   "boot": "auto",
   "options": {
     "mqttserver": "",
+    "mqttport": "1883",
     "mqttuser": "",
     "mqttpassword": "",
     "mqtttopic": "sensor/tuyaswitch/",
@@ -16,6 +17,7 @@
   },
   "schema": {
     "mqttserver": "str",
+    "mqttport": "int",
     "mqttuser": "str",
     "mqttpassword": "str",
     "mqtttopic": "str",
