@@ -1,0 +1,25 @@
+{
+  "name": "TuyaConsumption",
+  "version": "0.1",
+  "slug": "tuya_consumption",
+  "description": "This addon retrieve the power consumption from tuya devices",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "before",
+  "boot": "auto",
+  "options": {
+    "mqttserver": "",
+    "mqttuser": "",
+    "mqttpassword": "",
+    "mqtttopic": "sensor/tuyaswitch/",
+    "tuyaips": "192.168.21.65,192.168.21.66,192.168.21.67,192.168.21.68",
+    "tuyadeviceid": ""
+  },
+  "schema": {
+    "mqttserver": "str",
+    "mqttuser": "str",
+    "mqttpassword": "str",
+    "mqtttopic": "str",
+    "tuyaips": "str",
+    "tuyadeviceid": "str"
+}
+}
