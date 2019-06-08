@@ -11,6 +11,7 @@ WORKDIR /usr/src/app
 #COPY default.conf /etc/nginx/conf.d/
 
 COPY requirements.txt ./
+RUN pip install --no-cache-dir pyaes
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
@@ -24,4 +25,3 @@ RUN apk update \
  && rm -rf /var/cache/apk/*
 
 CMD [ "/usr/src/app/run.sh"]
-
