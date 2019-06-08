@@ -1,3 +1,4 @@
 requests
 configparser
 logging
+paho-mqtt
