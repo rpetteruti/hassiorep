@@ -11,10 +11,6 @@ WORKDIR /usr/src/app
 #COPY default.conf /etc/nginx/conf.d/
 
 COPY requirements.txt ./
-RUN pip install --no-cache-dir pyaes
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
 
 RUN chmod +x /usr/src/app/run.sh
 
@@ -23,5 +19,12 @@ RUN apk update \
  && apk add bash \
  && apk add curl \
  && rm -rf /var/cache/apk/*
+ 
+RUN apk add py-cryptography gcc musl-dev libffi-dev openssl-dev python3-dev
+
+RUN pip install --no-cache-dir pyaes
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
 
 CMD [ "/usr/src/app/run.sh"]
