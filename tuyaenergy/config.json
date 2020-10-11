@@ -6,6 +6,7 @@
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "before",
   "boot": "auto",
+  "panel_icon": "mdi:power-socket-eu",
   "options": {
     "mqttserver": "",
     "mqttport": "1883",
