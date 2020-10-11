@@ -27,8 +27,9 @@ tuyadevkeys = sys.argv[8].split(",")
 tuyadevvers = sys.argv[9].split(",")
 iteration = 0
 for ip in tuyaips:
-    print "Gettin power for: "+ip+ " " +tuyadevids[iteration]
+    
     ip = tuyaips[iteration]
+    print "Gettin power for: "+ip+ " " +tuyadevids[iteration]
     id = tuyadevids[iteration]
     key = tuyadevkeys[iteration]
     vers = tuyadevvers[iteration]
