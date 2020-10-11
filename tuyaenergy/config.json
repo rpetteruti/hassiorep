@@ -13,7 +13,7 @@
     "mqttuser": "",
     "mqttpassword": "",
     "mqtttopic": "sensor/tuyaswitch/",
-    "tuyaips": "192.168.21.69,192.168.21.70",
+    "tuyadevips": "192.168.21.69,192.168.21.70",
     "tuyadevids": "123,123",
     "tuyadevkeys": "123,123",
     "tuyadevvers": "3.1,3.1"
@@ -24,7 +24,7 @@
     "mqttuser": "str",
     "mqttpassword": "str",
     "mqtttopic": "str",
-    "tuyaips": "str",
+    "tuyadevips": "str",
     "tuyadevids": "str",
     "tuyadevkeys": "str",
     "tuyadevvers": "str"
