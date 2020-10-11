@@ -1,6 +1,5 @@
 requests
 configparser
-logging
 paho-mqtt
 tinytuya
 pycryptodome
