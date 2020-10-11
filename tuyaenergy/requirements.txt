@@ -2,4 +2,6 @@ requests
 configparser
 logging
 paho-mqtt
-pytuya
+pycryptodome
+tinytuya
+tuyapower
