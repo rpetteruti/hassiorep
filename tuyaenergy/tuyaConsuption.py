@@ -36,7 +36,7 @@ for ip in tuyaips:
     print("Device at %s: ID %s, state=%s, W=%s, mA=%s, V=%s [%s]"%(ip,id,on,w,mA,V,err))
     mqttc = mqtt.Client(MQTTUSER)
     mqttc.username_pw_set(MQTTUSER, MQTTPASSWORD)
-    mqttc.connect(MQTTSERVER, MQTTSERVERPORT)
+    mqttc.connect(MQTTSERVER, str(MQTTSERVERPORT))
 
 
     payload = '{ "power": '+str(w)+', "current": '+str(mA)+', "voltage": '+str(V)+' }'
