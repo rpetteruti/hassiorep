@@ -3,4 +3,5 @@ configparser
 logging
 paho-mqtt
 tinytuya
+pycryptodome
 tuyapower
