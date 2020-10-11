@@ -29,7 +29,6 @@ iteration = 0
 for ip in tuyaips:
     
     ip = tuyaips[iteration]
-    print "Gettin power for: "+ip+ " " +tuyadevids[iteration]
     id = tuyadevids[iteration]
     key = tuyadevkeys[iteration]
     vers = tuyadevvers[iteration]
