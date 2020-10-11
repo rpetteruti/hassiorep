@@ -1,6 +1,6 @@
 {
   "name": "TuyaConsumption",
-  "version": "0.5",
+  "version": "0.55",
   "slug": "tuya_consumption",
   "description": "This addon retrieve the power consumption from tuya devices",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
