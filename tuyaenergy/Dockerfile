@@ -12,7 +12,7 @@ WORKDIR /usr/src/app
 
 COPY requirements.txt ./
 
-RUN chmod +x /usr/src/app/run.sh
+
 
 RUN apk update \
  && apk add jq \
@@ -26,5 +26,7 @@ RUN pip install --no-cache-dir pyaes
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+
+RUN chmod +x /usr/src/app/run.sh
 
 CMD [ "/usr/src/app/run.sh"]
