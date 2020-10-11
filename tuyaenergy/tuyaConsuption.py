@@ -9,25 +9,34 @@ import datetime
 import os
 import sys
 
-#python tuyaConsuption.py $MQTTSERVER $MQTTUSER $MQTTPASSWORD $MQTTTOPIC 
+#python tuyaConsuption.py $MQTTSERVER $MQTTUSER $MQTTPASSWORD $MQTTTOPIC $TUYAIPS $TUYADEVICEID
 # MQTT server - EDIT THIS
 MQTTSERVER=sys.argv[1]
 MQTTUSER=sys.argv[2]
 MQTTPASSWORD=sys.argv[3]
-MQTTTOPIC=sys.argv[4]
+MQTTSERVERPORT=sys.argv[4]
+MQTTTOPIC=sys.argv[5]
 
 ##########
 
-devices = tuyapower.deviceScan()
-for ip in devices:
-    id = devices[ip]['gwId']
-    key = devices[ip]['productKey']
-    vers = devices[ip]['version']
+#devices = tuyapower.deviceScan()
+
+tuyaips = sys.argv[6].split(",")
+tuyadevids = sys.argv[7].split(",")
+tuyadevkeys = sys.argv[8].split(",")
+tuyadevvers = sys.argv[9].split(",")
+iteration = 0
+for ip in tuyaips:
+    print "Gettin power for: "+ip+ " " +tuyadevids[iteration]
+    ip = tuyaips[iteration]
+    id = tuyadevids[iteration]
+    key = tuyadevkeys[iteration]
+    vers = tuyadevvers[iteration]
     (on, w, mA, V, err) = tuyapower.deviceInfo(id, ip, key, vers)
     print("Device at %s: ID %s, state=%s, W=%s, mA=%s, V=%s [%s]"%(ip,id,on,w,mA,V,err))
     mqttc = mqtt.Client(MQTTUSER)
     mqttc.username_pw_set(MQTTUSER, MQTTPASSWORD)
-    mqttc.connect(MQTTSERVER, sys.argv[5])
+    mqttc.connect(MQTTSERVER, MQTTSERVERPORT)
 
 
     payload = '{ "power": '+str(w)+', "current": '+str(mA)+', "voltage": '+str(V)+' }'
@@ -40,3 +49,5 @@ for ip in devices:
     mqttc.publish("homeassistant/sensor/tuya_"+id+"/voltage/config", configPayploadVoltage,retain=False)
     mqttc.publish(MQTTTOPIC+id+"/state",payload ,retain=False)
     mqttc.loop(2)
+
+    iteration = iteration + 1
