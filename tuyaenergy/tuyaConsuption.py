@@ -37,8 +37,14 @@ for ip in tuyaips:
     mqttc = mqtt.Client(MQTTUSER)
     mqttc.username_pw_set(MQTTUSER, MQTTPASSWORD)
     mqttc.connect(MQTTSERVER, int(MQTTPORT))
-
-
+    
+    if(w == -99):                                                                       
+        w = 0
+    if(mA == -99):                                                                       
+        mA = 0
+    if(V == -99):                                                                       
+        V = 0
+    
     payload = '{ "power": '+str(w)+', "current": '+str(mA)+', "voltage": '+str(V)+' }'
     configPayploadPower = '{"name": "tuya_'+id+'_power", "state_topic": "'+MQTTTOPIC+id+'/state", "unit_of_measurement": "W", "value_template": "{{ value_json.power}}" }'
     configPayploadCurrent = '{"name": "tuya_'+id+'_current", "state_topic": "'+MQTTTOPIC+id+'/state", "unit_of_measurement": "mA", "value_template": "{{ value_json.current}}" }'
