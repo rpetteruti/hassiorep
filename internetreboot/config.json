@@ -1,0 +1,15 @@
+{
+  "name": "Internet Reboot",
+  "version": "0.1",
+  "slug": "internet_reboot",
+  "description": "This addon power off and on the plug if there is no internet connection",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "before",
+  "boot": "auto",
+  "options": {
+    "tuyaplugip": "192.168.21.68"
+  },
+  "schema": {
+    "tuyaplugip": "str"
+}
+}
