@@ -1,9 +1,9 @@
 #!/bin/bash
 #set -e
 
-#CONFIG_PATH=/data/options.json
+CONFIG_PATH=/data/options.json
 
-#TUYAPLUGIP=$(jq --raw-output ".tuyaplugip" $CONFIG_PATH)
+TUYAPLUGIP=$(jq --raw-output ".tuyaplugip" $CONFIG_PATH)
 
 echo "Parameters: $TUYAPLUGIP "
 
